@@ -1,0 +1,3 @@
+import OrderForm from "@/components/order-form";
+import { partners } from "@/lib/partners";
+export default async function OrderPage({searchParams}:{searchParams:Promise<{layanan?:string;mitra?:string;kebutuhan?:string}>}) { const params=await searchParams; const service=typeof params.layanan === "string" ? params.layanan : ""; const partner=partners.find(p=>p.id===params.mitra && ((service==="Food Delivery" && p.jenis==="resto") || (service==="Easy Shopping" && p.jenis==="toko"))); return <OrderForm initialService={service} partner={partner ? {nama:partner.nama,alamat:partner.alamat} : undefined} initialTask={service === "Palugada" && typeof params.kebutuhan === "string" ? params.kebutuhan.slice(0,100) : ""}/>; }
