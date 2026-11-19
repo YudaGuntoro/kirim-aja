@@ -22,3 +22,7 @@ Untuk produksi gunakan penyimpanan persisten dan HTTPS. Autentikasi admin sederh
 Setiap pesanan baru mendapat tautan pelacakan pribadi. Simpan tautan tersebut setelah membuat pesanan; halaman pelacakan menampilkan status dan nama driver, serta memperbarui data setiap 15 detik. Tautan ini tidak tersedia untuk pesanan lama yang dibuat sebelum fitur pelacakan.
 
 Di dashboard admin, masukkan nama driver pada pesanan dan klik **Simpan driver**. Admin mengubah status secara manual. Fitur ini belum menyediakan akun driver, notifikasi, atau pelacakan GPS. Gunakan HTTPS sebelum membagikan tautan secara publik dan jangan bagikan tautan kepada pihak yang tidak berwenang.
+
+## Domain dan deployment
+
+Website disiapkan untuk `kirim-aja.nusakaryadigital.com` dan panel untuk `panel-kirim-aja.nusakaryadigital.com`. Akses akar domain panel diarahkan ke `/admin`. Di VPS, gunakan `.env` root (berdasarkan `.env.example`) dan Docker Compose; simpan data SQLite pada volume `kirimaja_data`. Perubahan `NEXT_PUBLIC_*` memerlukan build ulang karena nilai dibenamkan saat build. Panduan tugas deployment pertama tersedia di [DEPLOY-VPS.md](DEPLOY-VPS.md).

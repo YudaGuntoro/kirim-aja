@@ -8,6 +8,11 @@ services:
       - "127.0.0.1:${DELIVERY_PORT:-3101}:3000"
     environment:
       ADMIN_PASSWORD: ${ADMIN_PASSWORD:?Isi ADMIN_PASSWORD di .env}
+      NEXT_PUBLIC_ADMIN_URL: ${NEXT_PUBLIC_ADMIN_URL:-}
+      NEXT_PUBLIC_WHATSAPP: ${NEXT_PUBLIC_WHATSAPP:-}
+      NEXT_PUBLIC_INSTAGRAM: ${NEXT_PUBLIC_INSTAGRAM:-}
+      NEXT_PUBLIC_TIKTOK: ${NEXT_PUBLIC_TIKTOK:-}
+      NEXT_PUBLIC_CONTACT_EMAIL: ${NEXT_PUBLIC_CONTACT_EMAIL:-}
     volumes:
       - ./package:/app
       - kirimaja_node_modules:/app/node_modules
