@@ -24,7 +24,7 @@ export default function HeroSlider() {
         <div className="wrap banner-content"><div className="banner-copy"><span className="banner-eyebrow">{slide.label}</span><h1>{slide.title}<br/><em>{slide.accent}</em></h1><p>{slide.description}</p><a className="btn banner-cta" href="#pesan" tabIndex={i===index?0:-1}>Mulai kirim</a></div><div className="banner-image" style={{backgroundImage:`url(${slide.image})`}} role="img" aria-label={slide.alt}/></div>
       </div>)}
     </div>
-    <button className="banner-arrow banner-prev" type="button" aria-label="Slide sebelumnya" onClick={()=>move(-1)}>&#8249;</button><button className="banner-arrow banner-next" type="button" aria-label="Slide berikutnya" onClick={()=>move(1)}>&#8250;</button>
+    <button className="banner-arrow banner-prev" type="button" aria-label="Slide sebelumnya" onClick={()=>move(-1)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m14 6-6 6 6 6"/></svg></button><button className="banner-arrow banner-next" type="button" aria-label="Slide berikutnya" onClick={()=>move(1)}><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="m10 6 6 6-6 6"/></svg></button>
     <div className="banner-dots" aria-label="Pilih slide">{slides.map((s,i)=><button key={s.image} type="button" className={i===index?'active':''} aria-label={`Tampilkan slide ${i+1}`} aria-current={i===index?'true':undefined} onClick={()=>setIndex(i)}/>)}</div>
   </section>
 }

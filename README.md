@@ -11,7 +11,7 @@ cd package
 npm ci
 ```
 
-Salin `.env.example` menjadi `.env.local` di folder `package`, lalu atur `ADMIN_PASSWORD`. Gunakan kata sandi yang kuat sebelum digunakan publik. Jalankan `npm run dev` dan buka http://localhost:3000. Dashboard ada di http://localhost:3000/admin.
+Salin `.env.example` menjadi `.env.local` di folder `package`, lalu atur `ADMIN_USERNAME` dan `ADMIN_PASSWORD`. Username bawaan adalah `admin`; untuk demo lokal dapat memakai kata sandi `admin123`. Gunakan kata sandi yang kuat sebelum digunakan publik. Jalankan `npm run dev` dan buka http://localhost:3000. Dashboard ada di http://localhost:3000/admin.
 
 Pesanan disimpan di `package/data/delivery.sqlite`, dibuat otomatis saat pertama kali digunakan. Backup folder `data` untuk mempertahankan pesanan. Dashboard memperbarui daftar setiap 15 detik; status dapat diubah dari daftar pesanan. Database dibuat secara otomatis dan berisi satu pesanan contoh untuk mencoba pelacakan.
 
