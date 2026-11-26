@@ -3,6 +3,7 @@ import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  distDir: process.env.KIRIMAJA_NEXT_DIST_DIR || ".next",
   outputFileTracingRoot: path.resolve(__dirname),
   async headers() {
     return [
@@ -21,6 +22,7 @@ const nextConfig: NextConfig = {
             : []),
         ],
       },
+      { source: "/kurir/:path*", headers: [{ key: "Referrer-Policy", value: "no-referrer" }, { key: "X-Robots-Tag", value: "noindex, nofollow" }, { key: "Cache-Control", value: "no-store" }] },
     ];
   },
   images: {
